@@ -1,0 +1,11 @@
+Robotun Mekanik ve Elektronik Yapısı
+
+Robotumuzun hareket sistemi için iki adet RC motor kullanılmıştır. Direksiyon mekanizmasını kontrol etmek amacıyla ön kısımda bir adet servo motor bulunmaktadır. Motorların kontrolü ve güç dağıtımı için L298N motor sürücü kartı tercih edilmiştir.
+
+Sistemin enerji ihtiyacı, toplamda 6 V sağlayan dört adet AAA pil ile karşılanmaktadır. Görüntü işleme ve kamera sisteminin enerji gereksinimi ise taşınabilirliği ve kullanım kolaylığı nedeniyle bir powerbank ile sağlanmaktadır.
+
+Robotun ön kısmında bir mesafe sensörü bulunmaktadır. Bu sensör, robotun önündeki boşluğu algılayarak hareket yönünün belirlenmesine yardımcı olur. Robotun sağa veya sola yönelme kararı yalnızca mesafe bilgisine değil, aynı zamanda kamera tarafından algılanan renk verilerine de bağlıdır. Renk algılama işlemi için düşük enerji tüketimine sahip ve uygun maliyetli bir Everest kamera kullanılmıştır.
+
+Tekerlek seçiminde dayanıklılık, denge ve uygun oranlar dikkate alınmıştır. İlk prototip aşamasında farklı tekerlekler kullanılmış olsa da, daha sağlam ve güvenilir bir yapı elde etmek amacıyla PLA+ malzemeden üretilen tekerlekler tercih edilmiştir. Arka bölümde daha büyük tekerlekler kullanılmış, ön tekerleklerin boyutları ise arka tekerleklerle uyumlu olacak şekilde oranlanarak belirlenmiştir. Bu sayede robotun dengeli hareket etmesi ve yön kontrolünün daha verimli olması sağlanmıştır.
+
+Bu donanım tercihleri sayesinde robotumuz hem enerji verimliliği hem de hareket kabiliyeti açısından ihtiyaç duyulan performansı sağlayabilecek şekilde tasarlanmıştır.
