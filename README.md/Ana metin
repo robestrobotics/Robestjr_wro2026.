@@ -1,0 +1,189 @@
+Robotumuzun Tasarımı, Geliştirme Süreci ve Teknik Özellikleri
+Giriş
+
+Teknolojinin hızla geliştiği günümüzde robotik sistemler günlük yaşamın birçok alanında kullanılmaya başlanmıştır. Eğitimden sağlığa, üretimden ulaşıma kadar pek çok sektörde robotların sağladığı avantajlar dikkat çekmektedir. Biz de WRO turnuvasına hazırlanırken yalnızca görevleri yerine getiren bir robot geliştirmeyi değil, aynı zamanda robotik sistemlerin temel çalışma prensiplerini öğrenmeyi ve uygulamayı hedefledik.
+
+Bu süreçte geliştirdiğimiz robot, çevresini algılayabilen, aldığı verilere göre karar verebilen ve otonom hareket edebilen bir kara aracıdır. Robotumuzun tasarımında maliyet, enerji verimliliği, dayanıklılık ve taşınabilirlik kriterleri göz önünde bulundurulmuştur. Mekanik tasarım, elektronik donanım ve yazılım sistemleri bir bütün olarak planlanmış ve birçok prototip çalışması sonucunda son haline ulaştırılmıştır.
+
+Tasarım Süreci
+
+Projemizin ilk aşamasında robotumuzun hangi görevleri yerine getirmesi gerektiğini belirledik. Robotun belirlenen parkur üzerinde ilerleyebilmesi, engelleri algılayabilmesi ve renk bilgilerine göre yön değiştirebilmesi temel hedeflerimiz arasında yer aldı.
+
+İlk prototip çalışmalarımızda farklı motorlar, tekerlek sistemleri ve sensörler denedik. Bu denemeler sırasında bazı parçaların yeterli performansı göstermediğini veya enerji tüketiminin beklediğimizden yüksek olduğunu gözlemledik. Bu nedenle sistemimizi sürekli geliştirerek daha verimli bir yapı oluşturmaya çalıştık.
+
+Robotun her parçası seçilirken performans ve maliyet dengesi göz önünde bulunduruldu. Böylece hem güvenilir çalışan hem de bütçe açısından erişilebilir bir sistem ortaya çıkarıldı.
+
+Mekanik Yapı
+
+Robotumuzun hareket sistemi iki adet RC motor üzerine kurulmuştur. Bu motorlar arka tekerlekleri hareket ettirerek robotun ileri ve geri hareket etmesini sağlamaktadır.
+
+Yönlendirme sistemi için ön bölümde bir adet servo motor kullanılmıştır. Servo motor sayesinde ön tekerlek belirli açılarla sağa veya sola döndürülebilmektedir. Bu yapı gerçek otomobillerde kullanılan direksiyon sistemine benzer bir çalışma mantığı sunmaktadır.
+
+Şasenin tasarımında ağırlık dağılımı dikkatlice planlanmıştır. Ağır bileşenlerin mümkün olduğunca merkeze yakın yerleştirilmesiyle robotun dengesi artırılmıştır. Böylece dönüşler sırasında oluşabilecek savrulmalar azaltılmıştır.
+
+Tekerlek seçiminde farklı alternatifler değerlendirilmiştir. İlk aşamada kullanılan tekerleklerin yeterli dayanıklılığı göstermediği görülmüştür. Bunun üzerine daha sağlam bir yapı elde etmek amacıyla PLA+ malzemeden üretilmiş tekerlekler tercih edilmiştir. PLA+ malzemesi standart PLA'ya göre daha dayanıklı olduğundan robotun uzun süreli kullanımında avantaj sağlamaktadır.
+
+Arka tarafta daha büyük çaplı tekerlekler kullanılmıştır. Bu tekerlekler robotun hareket gücünü artırırken zeminle daha iyi temas kurmasını sağlamaktadır. Ön tekerleklerin boyutları ise arka tekerleklerle uyumlu olacak şekilde oranlanmıştır. Böylece hem estetik hem de mekanik açıdan dengeli bir yapı elde edilmiştir.
+
+Elektronik Sistemler
+
+Robotumuzun elektronik altyapısı farklı bileşenlerin birlikte çalışmasıyla oluşturulmuştur.
+
+Hareket sistemi için kullanılan iki RC motorun kontrolü L298N motor sürücü kartı ile gerçekleştirilmektedir. Motor sürücüsü, kontrol kartından gelen sinyalleri motorların ihtiyaç duyduğu güç seviyesine dönüştürerek motorların doğru şekilde çalışmasını sağlamaktadır.
+
+Yönlendirme görevini üstlenen servo motor da kontrol kartı üzerinden yönetilmektedir. Servo motorun hassas açısal hareket kabiliyeti sayesinde robotumuz kontrollü ve kararlı dönüşler gerçekleştirebilmektedir.
+
+Sistemin enerji ihtiyacını karşılamak amacıyla dört adet AAA pil kullanılmıştır. Her pil yaklaşık 1,5 volt gerilim sağladığından toplamda 6 voltluk bir enerji kaynağı elde edilmektedir. Bu enerji motorların ve temel elektronik sistemlerin çalışması için yeterli olmaktadır.
+
+Görüntü işleme sisteminin enerji ihtiyacı ise ayrı bir kaynak üzerinden karşılanmaktadır. Bu amaçla taşınabilir ve kullanımı kolay bir powerbank tercih edilmiştir. Powerbank kullanılması sayesinde sistem daha güvenli çalışmakta ve enerji yönetimi daha kolay gerçekleştirilebilmektedir.
+
+Sensör ve Algılama Sistemleri
+
+Robotumuzun çevresini algılayabilmesi için farklı sensör sistemleri kullanılmıştır.
+
+Bunlardan ilki mesafe sensörüdür. Robotun ön kısmına yerleştirilen bu sensör, önündeki nesneleri ve boşlukları algılayabilmektedir. Sensör tarafından elde edilen veriler sürekli olarak kontrol sistemi tarafından değerlendirilmektedir.
+
+Mesafe sensörü sayesinde robotumuz engellere çarpmadan hareket edebilmekte ve uygun yön değiştirme kararları verebilmektedir. Sensörün hızlı veri sağlaması robotun tepki süresini önemli ölçüde azaltmaktadır.
+
+Robotumuzda kullanılan ikinci önemli algılama sistemi ise kameradır. Renk algılama işlemleri için düşük enerji tüketimine sahip, uygun maliyetli bir Everest kamera tercih edilmiştir.
+
+Kamera tarafından alınan görüntüler analiz edilerek belirlenen renkler tespit edilmektedir. Robotumuzun yön değiştirme kararlarının önemli bir bölümü bu renk verilerine dayanmaktadır. Örneğin sistem belirli bir rengi algıladığında sağa, başka bir rengi algıladığında ise sola dönüş gerçekleştirebilmektedir.
+
+Bu sayede robot yalnızca engelleri algılayan bir araç olmaktan çıkıp çevresindeki görsel bilgileri yorumlayabilen akıllı bir sisteme dönüşmektedir.
+
+Yazılım Altyapısı
+
+Robotumuzun tüm donanım bileşenleri yazılım aracılığıyla koordine edilmektedir.
+
+Yazılımın temel görevi sensörlerden gelen verileri işlemek ve uygun hareket komutlarını oluşturmaktır. Sistem sürekli olarak mesafe sensöründen ve kameradan veri almaktadır.
+
+Mesafe sensörü tarafından elde edilen bilgiler değerlendirilerek robotun önündeki durum belirlenmektedir. Eğer güvenli bir geçiş alanı bulunuyorsa robot hareketine devam etmektedir. Aksi durumda yön değiştirme kararı alınmaktadır.
+
+Kamera tarafından elde edilen renk bilgileri de aynı şekilde analiz edilmektedir. Algılanan renk değerleri önceden tanımlanmış eşiklerle karşılaştırılarak robotun sağa veya sola dönmesi sağlanmaktadır.
+
+Bu yapı sayesinde robotumuz gerçek zamanlı karar verebilmekte ve çevresel değişikliklere hızlı şekilde uyum sağlayabilmektedir.
+
+Karşılaşılan Zorluklar
+
+Proje geliştirme sürecinde çeşitli teknik sorunlarla karşılaştık.
+
+İlk olarak enerji yönetimi konusunda bazı problemler yaşadık. Tüm sistemlerin tek bir enerji kaynağından beslenmesi durumunda kararsız çalışma davranışları gözlemledik. Bu nedenle görüntü işleme sistemini ayrı bir powerbank ile besleme kararı aldık.
+
+Bir diğer sorun tekerlek seçiminde ortaya çıktı. İlk kullanılan tekerlekler yeterli dayanıklılığı sağlayamadığı için farklı malzeme seçenekleri araştırdık. Sonuç olarak PLA+ malzemesine geçiş yaptık.
+
+Kamera sisteminde ise ışık değişimlerinden kaynaklanan bazı algılama hatalarıyla karşılaştık. Yazılım üzerinde yaptığımız iyileştirmeler sayesinde renk algılama doğruluğunu artırmayı başardık.
+
+Bu süreçte karşılaştığımız her problem bize yeni bilgiler kazandırmış ve robotumuzu geliştirmemize katkı sağlamıştır.
+
+Projenin Kazanımları
+
+Bu proje sayesinde yalnızca bir robot geliştirmedik; aynı zamanda mühendislik tasarım sürecini uygulamalı olarak öğrenme fırsatı elde ettik.
+
+Elektronik devrelerin kurulumu, sensör entegrasyonu, motor kontrolü, enerji yönetimi, mekanik tasarım ve yazılım geliştirme gibi birçok alanda deneyim kazandık.
+
+Ayrıca ekip çalışması, görev paylaşımı, problem çözme ve zaman yönetimi gibi becerilerimizi de geliştirdik.
+
+Robotumuzun her aşamasında planlama, test etme, hata bulma ve iyileştirme süreçlerini uygulayarak gerçek bir mühendislik deneyimi yaşadık.
+
+Sonuç
+
+Geliştirdiğimiz robot; mesafe sensörü, renk algılama kamerası, servo direksiyon sistemi ve RC motorlarıyla çevresini algılayabilen ve aldığı verilere göre karar verebilen otonom bir kara aracıdır.
+
+Proje boyunca mekanik tasarım, elektronik sistemler ve yazılım geliştirme alanlarında önemli deneyimler kazandık. Karşılaştığımız teknik sorunları çözerek robotumuzu sürekli geliştirdik ve daha güvenilir hale getirdik.
+
+Bu çalışma yalnızca bir yarışma projesi değil, aynı zamanda mühendislik, teknoloji ve takım çalışması becerilerimizi geliştiren kapsamlı bir öğrenme süreci olmuştur. Gelecekte robotumuza yeni sensörler, gelişmiş görüntü işleme algoritmaları ve yapay zekâ destekli karar mekanizmaları ekleyerek sistemi daha da geliştirmeyi hedefliyoruz.
+
+Design, Development Process, and Technical Features of Our Robot
+Introduction
+
+In today's rapidly advancing world of technology, robotic systems have begun to be used in many areas of daily life. The advantages provided by robots are becoming increasingly important in sectors ranging from education and healthcare to manufacturing and transportation. While preparing for the WRO tournament, our goal was not only to develop a robot capable of completing tasks but also to learn and apply the fundamental principles of robotic systems.
+
+The robot we developed throughout this process is an autonomous ground vehicle capable of perceiving its surroundings, making decisions based on the data it receives, and moving independently. Cost, energy efficiency, durability, and portability were considered during the design process. The mechanical design, electronic hardware, and software systems were planned as an integrated whole and refined through multiple prototype iterations until the final version was achieved.
+
+Design Process
+
+In the first stage of our project, we identified the tasks our robot needed to perform. Our primary objectives were for the robot to navigate a designated course, detect obstacles, and change direction based on color information.
+
+During the initial prototype phase, we tested different motors, wheel systems, and sensors. Throughout these trials, we observed that some components did not provide the expected performance or consumed more energy than anticipated. Therefore, we continuously improved our system to create a more efficient structure.
+
+Every component of the robot was selected with both performance and cost considerations in mind. As a result, we created a system that is both reliable and economically accessible.
+
+Mechanical Structure
+
+The movement system of our robot is based on two RC motors. These motors drive the rear wheels, allowing the robot to move forward and backward.
+
+A servo motor is installed at the front section for the steering mechanism. Thanks to the servo motor, the front wheel can turn right or left at specific angles. This structure offers an operating principle similar to the steering systems used in real automobiles.
+
+The weight distribution of the chassis was carefully planned. By positioning heavier components as close to the center as possible, the robot's balance was improved. This helped reduce instability during turns.
+
+Different alternatives were evaluated when selecting the wheels. During the initial stages, the wheels used did not provide sufficient durability. Therefore, wheels manufactured from PLA+ material were chosen to achieve a more robust structure. PLA+ offers greater durability compared to standard PLA, making it advantageous for long-term use of the robot.
+
+Larger diameter wheels were used at the rear of the robot. These wheels increase traction while providing better contact with the ground. The dimensions of the front wheels were proportionally adjusted to match the rear wheels. This resulted in a balanced structure both aesthetically and mechanically.
+
+Electronic Systems
+
+The electronic infrastructure of our robot was created through the integration of various components.
+
+The two RC motors used for movement are controlled by an L298N motor driver module. The motor driver converts the signals received from the control board into the power levels required by the motors, ensuring proper operation.
+
+The servo motor responsible for steering is also controlled through the control board. Thanks to the servo motor’s precise angular movement capability, our robot can perform controlled and stable turns.
+
+To meet the system’s energy requirements, four AAA batteries are used. Since each battery provides approximately 1.5 volts, a total voltage of 6 volts is obtained. This energy is sufficient for operating the motors and the basic electronic systems.
+
+The energy requirements of the image processing system are supplied through a separate power source. For this purpose, a portable and easy-to-use power bank was selected. Using a power bank allows the system to operate more safely and simplifies energy management.
+
+Sensor and Detection Systems
+
+Various sensor systems were used to enable our robot to perceive its surroundings.
+
+The first of these is a distance sensor. Positioned at the front of the robot, this sensor can detect objects and open spaces ahead. The data obtained by the sensor is continuously evaluated by the control system.
+
+Thanks to the distance sensor, our robot can move without colliding with obstacles and can make appropriate navigation decisions. The sensor’s rapid data acquisition significantly reduces the robot’s response time.
+
+The second important detection system used in our robot is the camera. A low-power and cost-effective Everest camera was selected for color detection tasks.
+
+The images captured by the camera are analyzed to identify predefined colors. A significant portion of our robot’s navigation decisions is based on this color information. For example, when a specific color is detected, the robot may turn right, while another color may trigger a left turn.
+
+As a result, the robot becomes more than a vehicle that simply detects obstacles; it transforms into an intelligent system capable of interpreting visual information from its environment.
+
+Software Infrastructure
+
+All hardware components of our robot are coordinated through software.
+
+The primary function of the software is to process data received from the sensors and generate appropriate movement commands. The system continuously collects information from both the distance sensor and the camera.
+
+The data obtained from the distance sensor is analyzed to determine the conditions ahead of the robot. If a safe passage is detected, the robot continues moving forward. Otherwise, a decision to change direction is made.
+
+Similarly, the color information obtained from the camera is analyzed. The detected color values are compared with predefined thresholds, enabling the robot to turn either right or left.
+
+This structure allows our robot to make real-time decisions and adapt quickly to environmental changes.
+
+Challenges Encountered
+
+Throughout the project development process, we encountered several technical challenges.
+
+The first challenge involved energy management. When all systems were powered from a single energy source, unstable operating behaviors were observed. Therefore, we decided to power the image processing system using a separate power bank.
+
+Another issue arose during wheel selection. Since the initial wheels did not provide sufficient durability, we researched alternative materials. As a result, we switched to PLA+ material.
+
+We also encountered some detection errors caused by lighting variations affecting the camera system. Through software improvements, we were able to increase the accuracy of color detection.
+
+Every challenge we faced provided us with new knowledge and contributed to the improvement of our robot.
+
+Project Outcomes
+
+Through this project, we not only developed a robot but also gained practical experience in the engineering design process.
+
+We acquired knowledge and skills in many areas, including electronic circuit assembly, sensor integration, motor control, energy management, mechanical design, and software development.
+
+In addition, we improved our teamwork, task distribution, problem-solving, and time management skills.
+
+At every stage of the project, we applied planning, testing, troubleshooting, and improvement processes, allowing us to experience a genuine engineering workflow.
+
+Conclusion
+
+The robot we developed is an autonomous ground vehicle capable of perceiving its surroundings and making decisions based on the data it receives through its distance sensor, color-detection camera, servo steering system, and RC motors.
+
+Throughout the project, we gained valuable experience in mechanical design, electronic systems, and software development. By solving the technical problems we encountered, we continuously improved our robot and increased its reliability.
+
+This project has been more than just a competition entry; it has been a comprehensive learning experience that enhanced our engineering, technology, and teamwork skills. In the future, we aim to further improve our system by integrating additional sensors, advanced image processing algorithms, and artificial intelligence-based decision-making mechanisms.
